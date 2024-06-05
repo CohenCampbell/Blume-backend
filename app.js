@@ -1,5 +1,4 @@
 const express = require("express");
-const cors = require("cors");
 require("dotenv").config();
 const userRoutes = require("./routes/users");
 const articleRoutes = require("./routes/articles");
@@ -8,7 +7,6 @@ const { NotFoundError } = require("./expressError");
 
 const app = express();
 
-app.use(cors());
 app.use(express.json());
 app.use(authenticateJWT);
 app.use("/users", userRoutes);
